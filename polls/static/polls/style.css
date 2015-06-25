@@ -1,8 +1,83 @@
-li a {
-    color: green;
-}
+/*resizes layout to fit screem*/
+* {margin:0;padding:0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 
 body {
-    background: white url("images/background.gif");
-	background-size: 100%;
+    background: white url("images/background.jpg");
+    background-size: 100%;
+}
+
+h1 {
+    font-weight:400;
+    font-size:26px;
+    margin-top:30px;
+    line-height:30px;
+}
+
+h2 {
+    font-weight:400;
+    font-size:22px;
+    margin-bottom:30px;
+    margin-left:13.333%;
+    text-transform:uppercase;
+}
+
+h3 {
+    position: relative;
+    left: 350px;
+    top: -10px;
+}
+
+p {
+    margin:0 0 15px 0;
+}
+
+img {
+    max-width:50%;
+}
+
+header {
+    background-color:#ffffff;
+    color:#333333;
+    position:fixed;
+    top:0;
+    height:80px;
+    width:100%;
+    z-index:100;
+    box-shadow: 0px 0px 3px #000;
+        -moz-box-shadow: 0px 0px 3px #000;
+        -webkit-box-shadow: 0px 0px 3px #000;
+}
+
+section {
+    width:100%;
+    padding:50px 0;
+    overflow: hidden;
+}
+
+.wrap {
+    width:1000px;
+    margin:0 auto;
+}
+
+#home {
+    margin-top:80px;
+    padding: 0px 0 20px 40%;
+}
+
+#polls {
+    background-color:rgba(255,255,255,0.7);
+    box-shadow: 0px 0px 3px #000;
+        -moz-box-shadow: 0px 0px 3px #000;
+        -webkit-box-shadow: 0px 0px 3px #000;
+}
+
+@media screen and (max-width: 560px) { 
+    header {
+        height:20px;
+    }
+
+    #home {
+        margin-top:40px;
+        padding:50px 0;
+    }
 }

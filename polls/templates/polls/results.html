@@ -1,9 +1,50 @@
-<h1>{{ question.question_text }}</h1>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-</ul>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,600italic' rel='stylesheet' type='text/css'>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+		<title>This or That? - The Polling App</title>
+	</head>
+	<h3>
+		<img src= "/static/polls/images/this-logo.png"/>
+	</h3>
+	<body>
+		<section id="polls">
+			<div class="wrap">
+				<h2>Polls</h2>
+				<p> 
+				<!-- Django results.html START-->
+				<h1>{{ question.question_text }}</h1>
+				
+				<ul>
+				{% for choice in question.choice_set.all %}
+    				<li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+				{% endfor %}
+				</ul>
+				
+				<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+				<!-- END -->
+				</p>
+			</div>
+		</section>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

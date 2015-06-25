@@ -1,13 +1,40 @@
 {% load staticfiles %}
-
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>This or That?</title>
+	</head>
+	
+	<h3>
+		<img src= "/static/polls/images/this-logo.png"/>
+	</h3>
+
+	<body>
+		<section id="polls">
+			<div class="wrap">
+				<h2>Polls</h2>
+				<p> 
+				<!-- Django index.html file START -->
+				{% if latest_question_list %}
+				<ul>
+    				{% for question in latest_question_list %}
+        				<li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    				{% endfor %}
+    			</ul>
+					{% else %}
+    					<p>No polls are available.</p>
+				{% endif %}
+				<!-- END -->
+				</p>
+			</div>
+		</section>
+	</body>
+</html>
+
+
+
+
+
+
